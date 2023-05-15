@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Login, Registration & Forgot Form Design</title>
+  <!-- Bootstrap 4 CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
+  <!-- Fontawesome CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="form.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Login Form Start -->
+    <div class="row justify-content-center wrapper" id="login-box">
+      <div class="col-lg-10 my-auto">
+        <div class="row">
+          <div class="col-lg-7 bg-white p-4">
+            <h1 style="color: #125A5A; text-align: center; font-weight: bold;">Login</h1>
+            <hr class="my-3" />
+            <form action="#" method="post" class="px-3" id="login-form">
+
+              <div class="input-group input-group-lg form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg fa-fw"></i></span>
+                </div>
+                <input type="email" id="login_email" name="email" class="form-control rounded-0" placeholder="E-Mail"
+                  required />
+              </div>
+
+              <div class="input-group input-group-lg form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
+                </div>
+                <input type="password" id="login_password" name="password" class="form-control rounded-0" minlength="5"
+                  placeholder="Password" required autocomplete="off" />
+              </div>
+
+              <div class="form-group clearfix">
+                <div class="custom-control custom-checkbox float-left">
+                  <input type="checkbox" class="custom-control-input" id="customCheck" name="rem" />
+                  <label class="custom-control-label" for="customCheck">Remember me</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="button" id="login-btn" value="Login" class="btn btn-primary btn-lg btn-block myBtn" />
+                <a href="#" id="register-link" style="color: black; text-align: center;">You dont have account ?
+                  Signup</a>
+                <div class="forgot float-right">
+                  <a href="#" id="forgot-link" style="color: black;">Forgot Password?</a>
+                </div>
+
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Login Form End -->
+
+
+    <!-- Registration Form Start -->
+    <div class="row justify-content-center wrapper" id="register-box" style="display: none;">
+      <div class="col-lg-10 my-auto">
+        <div class="row">
+
+          <div class="col-lg-7 bg-white p-4">
+            <h1 style="color: #125A5A; text-align: center; font-weight: bold;">Signup</h1>
+            <hr class="my-3" />
+            <form action="#" method="post" class="px-3" id="register-form">
+
+              <div class="input-group input-group-lg form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg fa-fw"></i></span>
+                </div>
+                <input type="email" id="reg-email" name="email" class="form-control rounded-0" placeholder="E-Mail"
+                  required />
+              </div>
+
+              <div class="input-group input-group-lg form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
+                </div>
+                <input type="password" id="reg-password" name="password" class="form-control rounded-0" minlength="5"
+                  placeholder="Password" required />
+              </div>
+
+              <div class="form-group">
+                <div id="passError" class="text-danger font-weight-bolder"></div>
+              </div>
+              <div class="form-group">
+                <input type="button" id="register-btn" value="Sign Up" class="btn btn-primary btn-lg btn-block myBtn" />
+                <a href="#" id="login-link" style="color: black; text-align: center;"> have account ? Login</a>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Registration Form End -->
+
+
+    <!-- Forgot Password Form Start -->
+    <div class="row justify-content-center wrapper" id="forgot-box" style="display: none;">
+      <div class="col-lg-10 my-auto ">
+        <div class="row">
+          <div class="col-lg-7 bg-white p-4">
+            <h1 style="color: #125A5A; text-align: center; font-weight: bold;">Reset Password</h1>
+            <hr class="my-3" />
+            <p class="lead text-center text-secondary">To reset your password, enter the registered e-mail adddress and
+              we will send you password reset instructions on your e-mail!</p>
+            <form action="#" method="post" class="px-3" id="forgot-form">
+              <div id="forgotAlert"></div>
+              <div class="input-group input-group-lg form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg"></i></span>
+                </div>
+                <input type="email" id="femail" name="email" class="form-control rounded-0" placeholder="E-Mail"
+                  required />
+              </div>
+              <div class="form-group">
+                <input type="button" id="forgot-btn" value="Reset Password"
+                  class="btn btn-primary btn-lg btn-block myBtn" />
+                <a href="#" id="back-link" style="color: black; text-align: center;">Cancel</a>
+
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Forgot Password Form End -->
+  </div>
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDF3KCy6AMHkH-15Xv7JWVsTQRp8Y4VZR0",
+      authDomain: "web-login-signup-fa9ef.firebaseapp.com",
+      projectId: "web-login-signup-fa9ef",
+      storageBucket: "web-login-signup-fa9ef.appspot.com",
+      messagingSenderId: "26048302321",
+      appId: "1:26048302321:web:a9c5ed282f9d2ca9e26d50",
+      measurementId: "G-5MDDX23N04"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+    console.log(app);
+
+
+
+
+    //----- New Registration code start   
+    document.getElementById("register-btn").addEventListener("click", function () {
+      var email = document.getElementById("reg-email").value;
+      var password = document.getElementById("reg-password").value;
+
+      if (email == "") {
+
+      }
+      if (password == "") {
+
+      }
+      //For new registration
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user);
+          alert("Registration successfully!!");
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+          console.log(errorMessage);
+          alert("Signup Faild");
+        });
+    });
+
+
+    //----- Login code start  
+    document.getElementById("login-btn").addEventListener("click", function () {
+      var email = document.getElementById("login_email").value;
+      var password = document.getElementById("login_password").value;
+
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user);
+          window.location.assign("http://172.20.10.2");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorMessage);
+        });
+    });
+
+
+
+    //----- Reset password code start  
+    document.getElementById("forgot-btn").addEventListener("click", function () {
+      var email = document.getElementById("femail").value;
+      if (email == "") {
+
+      }
+
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          alert("Check your email");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert("Sending reset email Faild");
+        });
+    });
+
+
+
+
+  </script>
+</body>
+
+</html>

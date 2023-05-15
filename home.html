@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login & Registration Form</title>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+
+    
+<div class="navbar">
+    <a href="#" id="help">Help</a>
+    <a href="#" id="logout"> Logout</a>
+  </div>
+
+
+
+    <br>
+    <iframe src="http://192.168.50.127" width="100%" height="700" style="border: #F0FFFF;">
+    </iframe>
+
+    <dialog id="favDialog" style="background-color: #cbc9c997;">
+        <form style="background-color: #cbc9c997;">
+            <p style="background-color: #cbc9c997;">
+                <label style="background-color: #86898c; font-weight: bold ;width: 350px; padding: 10px;">How to use SPEYE?</label><br><br>
+                <label style="font-weight: bold;">Add Guest:</label><br>
+                <label style="font-weight: lighter;"> 1. Type guest name in text area.<br>
+                    2. Show guest face to the camera.<br>
+                    3. Click "Add guest" button.<br></label><br>
+
+                <label style="font-weight: bold;">Delete Guest:</label><br>
+                <label style="font-weight: lighter;"> 1. Delete one guest: Click "X" sign.<br>
+                    2. Delete all guests: Click "Delete All".</label><br><br>
+
+                <label style="font-weight: bold;">Open Door Manually:</label><br>
+                <label style="font-weight: lighter;"> 1. Click "Access Control" button.<br>
+                    2. Click "Open Door" button.</label><br><br>
+
+                <label style="font-weight: bold;">Open Door Automatically:</label><br>
+                <label style="font-weight: lighter;"> 1. Click "Access Control" button.<br>
+                    2. Show guest face to the camera.</label><br><br>
+
+            </p>
+            <div>
+                <button value="cancel" formmethod="dialog"
+                    style="background-color: #125A5A; color:#F0FFFF; padding: 10px; width: 280px;">Close</button>
+            </div>
+        </form>
+    </dialog>
+    <p>
+    </p>
+    <output></output>
+
+</body>
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyDF3KCy6AMHkH-15Xv7JWVsTQRp8Y4VZR0",
+        authDomain: "web-login-signup-fa9ef.firebaseapp.com",
+        projectId: "web-login-signup-fa9ef",
+        storageBucket: "web-login-signup-fa9ef.appspot.com",
+        messagingSenderId: "26048302321",
+        appId: "1:26048302321:web:a9c5ed282f9d2ca9e26d50",
+        measurementId: "G-5MDDX23N04"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+
+    const showButton = document.getElementById('help');
+    const favDialog = document.getElementById('favDialog');
+
+    //----- Logout code start    
+    document.getElementById("logout").addEventListener("click", function () {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            console.log('Sign-out successful.');
+            window.location.assign("index.html")
+        }).catch((error) => {
+            // An error happened.
+            console.log('An error happened.');
+        });
+    });
+
+
+
+    //Help Dialog
+    // "Show the dialog" button opens the <dialog> modally
+    showButton.addEventListener('click', () => {
+        favDialog.showModal();
+    });
+
+
+</script>
+
+</html>
